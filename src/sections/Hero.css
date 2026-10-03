@@ -1,12 +1,19 @@
 /* sections/Hero.css */
 .hero {
-  /* distancia del avatar al borde superior: navbar + 55px en Figma */
-  --hero-top: calc(var(--navbar-height) + clamp(24px, 5.4vh, 55px));
+  --hero-cta-gap: clamp(32px, 8vh, 76px);
+  /* Solo para la animación del final del archivo: alto del bloque en escritorio
+     (avatar 186 + nombre 146 + textos 43 + botón 46 + 4 huecos de 10) y, con él,
+     a qué distancia del borde superior queda el bloque una vez centrado. */
+  --hero-content: calc(461px + var(--hero-cta-gap));
+  --hero-top: calc(
+    var(--navbar-height) + (100svh - var(--navbar-height) - var(--hero-content)) / 2
+  );
   min-height: 100svh;
   display: grid;
-  align-content: start;
+  /* centrado en el espacio que queda debajo del navbar */
+  align-content: center;
   justify-items: center;
-  padding: var(--hero-top) 16px 6vh;
+  padding: var(--navbar-height) 16px 0;
   scroll-margin-top: var(--navbar-height);
 }
 
@@ -120,7 +127,7 @@
 }
 
 .hero-cta {
-  margin-top: clamp(32px, 8vh, 76px);
+  margin-top: var(--hero-cta-gap);
   display: inline-flex;
   align-items: center;
   gap: 10px;
