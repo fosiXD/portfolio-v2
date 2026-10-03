@@ -1,0 +1,77 @@
+.navbar {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 10;
+  height: var(--navbar-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 48px;
+  background: color-mix(in srgb, var(--bg-card) 80%, transparent);
+  /* no está en Figma: evita que el texto que pasa por debajo se lea a través */
+  backdrop-filter: blur(10px);
+}
+
+.navbar-list {
+  display: flex;
+  align-items: center;
+  gap: clamp(4px, 2vw, 28px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* El logo va fuera del flujo para que los enlaces queden centrados en la página */
+.navbar-logo {
+  position: absolute;
+  left: 48px;
+  top: 6px;
+  display: flex;
+  align-items: center;
+  color: var(--primary-text);
+  text-decoration: none;
+  border-radius: 12px;
+  transition:
+    opacity 0.25s,
+    visibility 0.25s;
+}
+/* visibility: hidden también lo saca del orden de tabulación */
+.navbar-logo[data-visible="false"] {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.navbar-logo img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--bg-card);
+}
+
+.navbar-logo__name {
+  padding-top: 16px; /* en Figma el texto va un poco por debajo del centro */
+  font-size: 24px;
+  white-space: nowrap;
+}
+
+/* Sin espacio para logo + enlaces centrados: primero se va el texto, luego el logo */
+@media (max-width: 1100px) {
+  .navbar-logo__name {
+    display: none;
+  }
+}
+@media (max-width: 720px) {
+  .navbar {
+    padding-inline: 12px;
+  }
+  .navbar-logo {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar-logo {
+    transition: none;
+  }
+}

@@ -1,0 +1,22 @@
+.discord-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: clamp(16px, 4vw, 28px) clamp(18px, 4vw, 30px);
+  border-radius: 12px;
+  background: var(--primary);
+  color: var(--primary-text);
+  text-decoration: none;
+  font-size: clamp(1.125rem, 0.8rem + 1.6vw, 1.75rem); /* 28px en escritorio */
+}
+
+.discord-button img {
+  width: clamp(32px, 8vw, 48px);
+  height: auto;
+}
+
+.discord-button:focus-visible {
+  outline: 3px solid var(--primary-text);
+  outline-offset: 3px;
+}

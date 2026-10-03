@@ -1,0 +1,89 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--primary-text);
+  font-family: 'Lemon', system-ui, sans-serif;
+  line-height: 1.3125;
+
+  /* Respaldo del fondo: se ve si no hay WebGL o mientras carga el canvas */
+  background-color: var(--bg-screen);
+  background-image:
+    radial-gradient(60% 70% at 10% 30%, color-mix(in srgb, var(--primary) 55%, transparent), transparent 70%),
+    radial-gradient(40% 45% at 50% 0%, color-mix(in srgb, var(--primary) 35%, transparent), transparent 70%),
+    radial-gradient(45% 55% at 96% 38%, color-mix(in srgb, var(--tag) 50%, transparent), transparent 70%),
+    radial-gradient(40% 40% at 56% 100%, color-mix(in srgb, var(--badge) 45%, transparent), transparent 70%),
+    radial-gradient(25% 30% at 100% 96%, color-mix(in srgb, var(--lavender) 45%, transparent), transparent 70%);
+  background-attachment: fixed;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--primary-text);
+  outline-offset: 2px;
+}
+
+/* ---------- Piezas compartidas por las secciones ---------- */
+
+/* Columna de contenido: 1040px en el diseño, con 16px de aire en móvil */
+.container {
+  width: min(100% - 32px, var(--content-width));
+  margin-inline: auto;
+}
+
+.section {
+  --section-space: clamp(40px, 6vw, 72px);
+  padding-bottom: var(--section-space);
+  scroll-margin-top: var(--navbar-height);
+}
+
+/* La línea de arriba separa cada sección de la anterior (misma línea que .divider) */
+.section-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-top: var(--section-space);
+  border-top: 1px solid var(--divider);
+}
+
+.section-title {
+  margin: 0;
+  font-weight: 400;
+  font-size: clamp(2.25rem, 8vw, 4rem);
+  text-align: center;
+}
+
+.section-subtitle {
+  margin: 0;
+  font-size: clamp(1.05rem, 0.8rem + 1.2vw, 1.5rem);
+  color: var(--secondary-text);
+  text-align: center;
+}
+
+.divider {
+  width: 100%;
+  height: 0;
+  margin: 0;
+  border: 0;
+  border-top: 1px solid var(--divider);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

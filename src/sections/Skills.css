@@ -1,0 +1,33 @@
+.skills-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding-top: 30px;
+}
+
+/* 7 celdas de 104px + 6 huecos de 16px = 824px: caben 7 por fila y las
+   6 restantes bajan a la segunda fila, centradas */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px 16px;
+  max-width: 824px;
+  margin: 0;
+  /* sin espacio abajo: la línea de la sección siguiente cierra la cuadrícula */
+  padding: 40px 0 0;
+  list-style: none;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: clamp(88px, 22vw, 104px);
+  font-size: 14px;
+  color: var(--secondary-text);
+  text-align: center;
+}

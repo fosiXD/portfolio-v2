@@ -1,0 +1,55 @@
+/* En Figma hay una línea en blanco entre párrafos */
+.about-text {
+  display: grid;
+  gap: 1.3125em;
+  width: 100%;
+}
+.about-text p {
+  margin: 0;
+}
+
+.about-services {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  padding-top: 30px;
+}
+
+.about-services__title {
+  margin: 0;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 1rem + 2vw, 2rem);
+  text-align: center;
+}
+
+/* 3 columnas iguales en escritorio; en pantallas estrechas bajan solas.
+   Las tarjetas de una misma fila miden lo mismo porque grid las estira. */
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 10px 0;
+  list-style: none;
+}
+
+.about-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border: 1px solid var(--border-card);
+  border-radius: 12px;
+  background: var(--bg-card);
+}
+.about-card h4 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+}
+.about-card p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--secondary-text);
+}

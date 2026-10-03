@@ -1,0 +1,21 @@
+.mesh-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  /* invisible hasta que MeshRenderer pinta el primer fotograma:
+     mientras tanto (o si no hay WebGL) se ve el degradado CSS de body */
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+.mesh-background[data-ready] {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mesh-background {
+    transition: none;
+  }
+}

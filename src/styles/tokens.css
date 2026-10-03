@@ -1,0 +1,20 @@
+/* Tokens de diseño: mismos nombres que la colección "Colores" de Figma */
+:root {
+  --bg-screen: #fffaeb;
+  --bg-card: #fff1c2;
+  --border-card: #ebddb5;
+  --primary: #f9d56e;
+  --primary-text: #3d3226;
+  --secondary-text: #7a6a58;
+  --tag: #f7b7a3; /* durazno */
+  --badge: #b8d8ba; /* salvia */
+  --lavender: #cfc8f0; /* solo para el fondo */
+
+  /* Solo en código: texto sobre --primary, algo más oscuro que en Figma por contraste */
+  --on-primary: #5c4b3a;
+  /* Las líneas de Figma son --secondary-text al 50% */
+  --divider: rgb(122 106 88 / 0.5);
+
+  --navbar-height: 82px;
+  --content-width: 1040px;
+}

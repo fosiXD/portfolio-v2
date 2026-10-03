@@ -1,0 +1,18 @@
+.nav-item a {
+  display: block;
+  padding: 4px clamp(8px, 2vw, 16px);
+  border-radius: 12px;
+  color: var(--primary-text);
+  text-decoration: none;
+  font-size: clamp(0.875rem, 0.6rem + 1.4vw, 1.25rem); /* 20px en escritorio */
+  white-space: nowrap;
+}
+
+.nav-item a[aria-current] {
+  background: var(--primary);
+}
+
+.nav-item a:focus-visible {
+  outline: 3px solid var(--primary-text);
+  outline-offset: 2px;
+}
